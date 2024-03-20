@@ -1,19 +1,23 @@
+
+#include <iostream>
+
 class Animal {
-    public void makeSound() {
-        System.out.println("Animal makes a sound");
+public:
+    virtual void makeSound() {
+        std::cout << "Animal makes a sound" << std::endl;
     }
-}
+};
 
-class Dog extends Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("Dog barks");
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        std::cout << "Dog barks" << std::endl;
     }
-}
+};
 
-public class Main {
-    public static void main(String[] args) {
-        Animal animal = new Dog(); // Upcasting
-        animal.makeSound(); // This will call Dog's makeSound() method
-    }
+int main() {
+    Animal *animal = new Dog(); // Upcasting
+    animal->makeSound(); // This will call Dog's makeSound() method
+    delete animal;
+    return 0;
 }
