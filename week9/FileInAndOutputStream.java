@@ -15,3 +15,13 @@ int i;
 while ((i=fin.read())!=-1) {
 fout.write(i);
 }
+fin.close();
+fout.close();
+} catch (IOException e) {
+System.out.println("An error occurred while performing input/.");
+}
+}catch(FileNotFoundException e){
+System.out.println("The File is not found here");
+}
+}
+}
